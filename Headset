@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pamixer --list-sinks | grep "steel" | cut -f1 -d" " | awk '{pamixer --sink $1}'
+

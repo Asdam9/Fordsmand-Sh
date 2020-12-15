@@ -1,0 +1,25 @@
+#!/bin/bash
+
+setxkbmap -layout dk
+
+xrdb ~/.Xresources
+
+cat ~/.fehbg | tail -1 | grep "' '" && /home/adam/Documents/Scripts/Background.sh || ~/.fehbg &
+
+killall Titlebar.sh
+killall dunst
+
+dunst &
+
+~/Documents/Scripts/Titlebar.sh
+
+picom -b --config /home/adam/.config/picom.conf
+
+spotifyd && pgrep spotifyd | grep -v $(pgrep spotifyd | head -1) | xargs -r kill
+
+
+
+~/Documents/Scripts/Headset
+
+xrandr --output DP-2 --mode 1920x1080 --rate 240
+
