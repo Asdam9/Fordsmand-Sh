@@ -4,22 +4,12 @@ setxkbmap -layout dk
 
 xrdb ~/.Xresources
 
-cat ~/.fehbg | tail -1 | grep "' '" && /home/adam/Documents/Scripts/Background.sh || ~/.fehbg &
+cat ~/.fehbg | tail -1 | grep "' '" && /home/adam/Documents/Scripts/Fordsmand-Sh/Background.sh || ~/.fehbg &
 
-killall Titlebar.sh
-killall dunst
+pgrep Titlebar.sh > /dev/null || ~/Documents/Scripts/Fordsmand-Sh/Titlebar.sh
+pgrep dunst > /dev/null || dunst &
+pgrep mullvad-vpn > /dev/null || mullvad-vpn &
+pgrep spotifyd > /dev/null || spotifyd
 
-dunst &
-
-~/Documents/Scripts/Titlebar.sh
-
-picom -b --config /home/adam/.config/picom.conf
-
-spotifyd && pgrep spotifyd | grep -v $(pgrep spotifyd | head -1) | xargs -r kill
-
-
-
-~/Documents/Scripts/Headset
-
-xrandr --output DP-2 --mode 1920x1080 --rate 240
+~/Documents/Scripts/Fordsmand-Sh/Headset
 

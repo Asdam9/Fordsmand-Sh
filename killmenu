@@ -1,0 +1,5 @@
+#!/bin/bash
+
+var=$(cat ~/Documents/Text/KillList | dmenu)
+
+pgrep -x $var > /dev/null && killall -q $var > /dev/null && notify-send "Successfully killed $var" || notify-send "Failed killing $var"
