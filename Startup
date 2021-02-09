@@ -4,8 +4,6 @@ setxkbmap -layout dk
 
 xrdb ~/.Xresources
 
-cat ~/.fehbg | tail -1 | grep "' '" && /home/adam/Documents/Scripts/Fordsmand-Sh/Background.sh || ~/.fehbg &
-
 pgrep unclutter > /dev/null || unclutter -idle 3 &
 pgrep Titlebar.sh > /dev/null || ~/Documents/Scripts/Fordsmand-Sh/Titlebar.sh
 pgrep weather > /dev/null || ~/Documents/Scripts/Fordsmand-Sh/weather
@@ -16,3 +14,8 @@ pgrep picom > /dev/null || picom &
 
 ~/Documents/Scripts/Fordsmand-Sh/Headset
 
+xrandr --output DP-2 --mode 1920x1080 --rate 240 --preferred
+xrandr --output HDMI-1 --rotate right --mode 1920x1080 --rate 75 --right-of DP-2
+xrandr --output DVI-D-0 --mode 1920x1080 --rate 60 --left-of DP-2
+
+cat ~/.fehbg | tail -1 | grep "' '" && /home/adam/Documents/Scripts/Fordsmand-Sh/Background.sh || ~/.fehbg &
