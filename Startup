@@ -6,10 +6,13 @@ xrdb ~/.Xresources
 
 cat ~/.fehbg | tail -1 | grep "' '" && /home/adam/Documents/Scripts/Fordsmand-Sh/Background.sh || ~/.fehbg &
 
+pgrep unclutter > /dev/null || unclutter -idle 3 &
 pgrep Titlebar.sh > /dev/null || ~/Documents/Scripts/Fordsmand-Sh/Titlebar.sh
+pgrep weather > /dev/null || ~/Documents/Scripts/Fordsmand-Sh/weather
 pgrep dunst > /dev/null || dunst &
 pgrep mullvad-vpn > /dev/null || mullvad-vpn &
 pgrep spotifyd > /dev/null || spotifyd
+pgrep picom > /dev/null || picom &
 
 ~/Documents/Scripts/Fordsmand-Sh/Headset
 

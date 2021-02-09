@@ -1,3 +1,5 @@
 #!/bin/bash
 
-ssh -p 42069 $(cat ~/.local/share/logins/logins | dmenu -l 10 -w 300 -p "Login?" | awk '{print $1 "@185.92.222.105"}')
+ssh -p 42069 afordsmand.dk
+
+#ssh -p 42069 $(cat ~/.local/share/logins/logins | dmenu -l 10 -w 300 -p "Login?" | awk '{print $1 "@185.92.222.105"}')

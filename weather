@@ -1,0 +1,9 @@
+#!/bin/bash
+
+(
+while true; do
+    echo $(curl -s "wttr.in/?format=2&M" | tr -cd "a-zA-Z0-9°+.,/\- " | sed -e 's/^[ \t]*//') > ~/Documents/Scripts/Fordsmand-Sh/weather.txt
+    sleep 60
+done
+) &
+

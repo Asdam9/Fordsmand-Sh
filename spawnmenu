@@ -1,5 +1,7 @@
-#!/bin/bash
+#!/bin/zsh
 
 var=$(cat ~/Documents/Text/KillList | dmenu)
 
-pgrep -x $var > /dev/null && notify-send "$var already exists" || ($1 && notify-send "Spawned $var" || notify-send "Failed spawning $1") 
+[ $var = "transmission-da" ] && (pgrep -x $var > /dev/null || var='transmission-daemon')
+
+pgrep -x $var > /dev/null && notify-send "$var already exists" || (($var &) && notify-send "Spawned $var" || notify-send "Failed spawning $var") 
